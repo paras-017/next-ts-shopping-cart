@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ShoppingCartProvider } from '@/context/ShoppingCartContext';
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ShoppingCartProvider>
         <Navbar/>
         {children}
+        </ShoppingCartProvider>
       </body>
     </html>
   )
